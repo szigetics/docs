@@ -3,7 +3,7 @@ Changelog
 
 This page lists the changes made to Conan in each version, with links to each pull request for more details.
 
-2.28.1 (28-May-2026)
+2.29.0 (28-May-2026)
 --------------------
 
 - Feature: Limited support for ``python_requires`` in workspace, only in ``conanws.yml`` file. `#20028 <https://github.com/conan-io/conan/pull/20028>`_ . Docs `here <https://github.com/conan-io/docs/pull/4459>`__
