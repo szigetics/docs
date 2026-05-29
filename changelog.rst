@@ -3,6 +3,32 @@ Changelog
 
 This page lists the changes made to Conan in each version, with links to each pull request for more details.
 
+2.29.0 (28-May-2026)
+--------------------
+
+- Feature: Limited support for ``python_requires`` in workspace, only in ``conanws.yml`` file. `#20028 <https://github.com/conan-io/conan/pull/20028>`_ . Docs `here <https://github.com/conan-io/docs/pull/4459>`__
+- Feature: Added new public attribute `binaries` to the MesonToolchain generator. `#20017 <https://github.com/conan-io/conan/pull/20017>`_
+- Feature: Add support for Apple OS 26.5 release. `#19976 <https://github.com/conan-io/conan/pull/19976>`_
+- Feature: Document `RemoveAPI`. `#19930 <https://github.com/conan-io/conan/pull/19930>`_
+- Feature: New ``global_user.conf`` file to locally customize ``global.conf``. `#19923 <https://github.com/conan-io/conan/pull/19923>`_ . Docs `here <https://github.com/conan-io/docs/pull/4460>`__
+- Feature: Add support for GCC 16. `#19921 <https://github.com/conan-io/conan/pull/19921>`_
+- Fix: Forward ``-vxxx`` verbosity argument to ``conan workspace build/install`` packages. `#20015 <https://github.com/conan-io/conan/pull/20015>`_
+- Fix: Add message when no packages found in conan list command. `#20013 <https://github.com/conan-io/conan/pull/20013>`_
+- Fix: ``source_credentials.json`` now supports supplying only headers `#20004 <https://github.com/conan-io/conan/pull/20004>`_ . Docs `here <https://github.com/conan-io/docs/pull/4455>`__
+- Fix: `conan workspace add --output-folder` now properly updates the `output_folder` of an existing package entry in `conanws.yml` instead of ignoring it. `#19988 <https://github.com/conan-io/conan/pull/19988>`_
+- Fix: Default ``variant`` for QNX and VxWorks in default ``settings.yml`` should be ``null``, not ``None``. Also, add ``qcc=12.2`` version. `#19981 <https://github.com/conan-io/conan/pull/19981>`_
+- Fix: `runtime_deploy`: avoid crashing when overriding existing symlinks. `#19977 <https://github.com/conan-io/conan/pull/19977>`_
+- Fix: `AutotoolsDeps` will link with `-rpath` on shared package types and components correctly. `#19975 <https://github.com/conan-io/conan/pull/19975>`_
+- Fix: Warn and re-fetch when requested URLs conflict with existing ones with the same SHA256. `#19969 <https://github.com/conan-io/conan/pull/19969>`_
+- Fix: `cppstd_flag` for `clang-cl` now correctly maps C++23, C++26 and `gnu++` standards instead of producing invalid `/std:` flags. `#19965 <https://github.com/conan-io/conan/pull/19965>`_
+- Fix: Correct the ``conan workspace init`` docstring. `#19950 <https://github.com/conan-io/conan/pull/19950>`_
+- Fix: Allow workspaces root Conanfile to have a name to apply ``conf`` with patterns that would match that name. `#19927 <https://github.com/conan-io/conan/pull/19927>`_
+- Fix: Fix `meson_lib` missing deps, `meson_exe` layout & install verbosity. `#19918 <https://github.com/conan-io/conan/pull/19918>`_
+- Bugfix: Raise an error if `package_type` and `shared` option mismatch (``package-type`` is set to ``shared-library`` and ``shared=False`` or ``package_type=static-library`` and ``shared=True``) `#20023 <https://github.com/conan-io/conan/pull/20023>`_
+- BugFix: Fix the computation of ``options`` in ``graph build-order``. `#19950 <https://github.com/conan-io/conan/pull/19950>`_
+- Bugfix: Fix requirement definition for multilib components without explicit requirements for ``CMakeConfigDeps``. `#19942 <https://github.com/conan-io/conan/pull/19942>`_
+- Bugfix: `MSBuildDeps` no longer generates duplicate include and library directory paths in multi-component packages. `#19937 <https://github.com/conan-io/conan/pull/19937>`_
+
 2.28.1 (30-Apr-2026)
 --------------------
 
