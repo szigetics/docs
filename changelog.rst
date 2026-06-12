@@ -3,6 +3,11 @@ Changelog
 
 This page lists the changes made to Conan in each version, with links to each pull request for more details.
 
+2.29.1 (12-Jun-2026)
+--------------------
+
+- Bugfix: Handle special case where only one possible option is defined for shared. `#20082 <https://github.com/conan-io/conan/pull/20082>`_
+
 2.29.0 (28-May-2026)
 --------------------
 
