@@ -482,6 +482,18 @@ Other examples are:
    - Please make rational use of this feature. It is not a versioning mechanism and is not intended to replace actual requires in recipes.
    - The usage of this feature is intended for **temporarily** solving conflicts or replacing a specific dependency by a system one in some cross-build scenarios.
 
+When composing multiple profiles (e.g., ``-pr=base -pr=override``), it is possible to unset replacement rules defined in earlier profiles using the ``!`` marker as the replacement target:
+
+.. code-block:: text
+    :caption: *override_profile*
+
+    [replace_requires]
+    # Remove a specific replacement rule inherited from a base profile
+    # The "zlib/*" expression must match exactly the previous rule, it will not invalidate a "zlib/1.3.1" rule.
+    zlib/*: !
+    # Clear all replacement rules
+    *: !
+
 
 .. _reference_config_files_profiles_replace_tool_requires:
 
@@ -499,6 +511,18 @@ Same usage as the `replace_requires` section but in this case for `tool_requires
     cmake/*: cmake/3.25.2
 
 In this case, whatever version of ``cmake`` declared in recipes, will be replaced by the reference `cmake/3.25.2`.
+
+Replacement rules can be unset in profile composition using ``!`` as the replacement target:
+
+.. code-block:: text
+    :caption: *override_profile*
+
+    [replace_tool_requires]
+    # Remove a specific rule from a base profile
+    # The "cmake/*" expression must match exactly the previous rule, it will not invalidate a "cmake/3.30" rule.
+    cmake/*: !
+    # Clear all tool replacement rules
+    *: !
 
 ..  note::
 
